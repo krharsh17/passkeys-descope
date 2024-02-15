@@ -14,13 +14,15 @@ const App = () => {
 
   return <>
     {!isAuthenticated &&
-      (<div style={{paddingLeft: "30vw", paddingRight: "30vw"}}>
-        <Descope
-          flowId="sign-up-or-in"
-          onSuccess={(e) => console.log(e.detail.user)}
-          onError={(e) => console.log('Could not log in!')}
-        />
+      (<div style={{display: "flex", flexDirection: "column", justifyContent: "center", alignItems: "center", height: "100vh"}}>
+        <div style={{ maxWidth: "500px" }}>
+          <Descope
+            flowId="sign-up-or-in"
+            onSuccess={(e) => console.log(e.detail.user)}
+            onError={(e) => console.log('Could not log in!')}
+          />
         </div>
+      </div>
       )
     }
 
